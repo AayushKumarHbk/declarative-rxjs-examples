@@ -1,0 +1,34 @@
+<div class="example-container">
+    <h1>Sequential Requests (Dynamic) - v2</h1>
+    <mat-divider></mat-divider>
+    <img class="example-image" src="assets/images/network/sequential-requests-static-ex2.PNG" alt="Example Image">
+    <div class="button-div">
+        <button mat-raised-button color="primary" (click)="click$.next(null)">Get</button>
+    </div>
+    <div class="sections">
+        <ng-container *ngIf="(procedureInit$ | async) as procedureInit">
+            <div class="section" *ngIf="procedureInit?.procedureDef">
+                <h2>Procedure Definition</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let step of procedureInit.procedureDef.steps">{{ step.index + '. ' +
+                        step.name }}</mat-list-item>
+                </mat-list>
+            </div>
+            <div class="section" *ngIf="procedureInit?.commonConfig">
+                <h2>Common Config</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" class="left-align" *ngFor="let attribute of procedureInit.commonConfig.customAttributes | keyvalue">{{ attribute.key + ': ' +
+                        attribute.value }}</mat-list-item>
+                </mat-list>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="(alphaFields$ | async) as alphaFields">
+            <div class="section" *ngIf="alphaFields">
+                <h2>Demographics Fields</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let alphaField of alphaFields">{{ 'name: ' + alphaField.name }} {{ 'required: ' + alphaField.required }}</mat-list-item>
+                </mat-list>
+            </div>
+        </ng-container>
+    </div>
+</div>

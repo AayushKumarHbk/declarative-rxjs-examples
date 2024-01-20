@@ -1,0 +1,47 @@
+<div class="sidebar">
+
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Basic Usage
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a routerLink="/basic-http-request" routerLinkActive="active">Basic HTTP Request</a>
+            <a routerLink="/sequential-requests-static" routerLinkActive="active">Basic Sequential Requests</a>
+            <a routerLink="/sequential-requests-dynamic" routerLinkActive="active">Sequential Requests (dynamic)</a>
+            <a routerLink="/parallel-requests" routerLinkActive="active">Basic Parallel Requests</a>
+            <a routerLink="/sequential-requests-static-ex2" routerLinkActive="active">Improvement to Sequential Requests</a>
+            <a routerLink="/parallel-requests-dynamic" routerLinkActive="active">Dynamic Parallel Requests</a>
+            <a routerLink="/parallel-requests-batches" routerLinkActive="active">Dynamic Parallel Requests (batches)</a>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Polling Data
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a routerLink="/polling-single-api" routerLinkActive="active">Poll Single API</a>
+            <a routerLink="/polling-multiple-api" routerLinkActive="active">Poll Multiple APIs</a>
+            <a routerLink="/polling-multiple-api-with-deps" routerLinkActive="active">Multiple Pollings with Dependencies</a>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    User Events
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a routerLink="/basic-user-events" routerLinkActive="active">Basic User Events</a>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

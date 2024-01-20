@@ -1,0 +1,6 @@
+{
+    "/training/": {
+      "target": "http://localhost:9600",
+      "secure": false
+    }
+  }

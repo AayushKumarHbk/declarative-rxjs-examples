@@ -1,0 +1,19 @@
+<div class="example-container">
+    <h1>Sequential Requests (Dynamic)</h1>
+    <mat-divider></mat-divider>
+    <img class="example-image" src="assets/images/network/sequential-requests-dynamic.PNG" alt="Example Image">
+    <div class="button-div">
+        <button mat-raised-button color="primary" (click)="click$.next(null)">Get</button>
+    </div>
+    <div class="sections">
+        <div class="section section-1">
+            <ng-container *ngIf="(dossiers$ | async) as dossiers">
+                <h2>Dossiers List</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let dossier of dossiers; trackBy:trackById">{{ dossier.id }} {{
+                        dossier.status }} {{ dossier.createdBy }}</mat-list-item>
+                </mat-list>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="example-container">
+    <h1>Basic HTTP Request</h1>
+    <mat-divider></mat-divider>
+    <img class="example-image" src="assets/images/network/basic-http-request.PNG" alt="Example Image">
+    <div class="button-div">
+        <button mat-raised-button color="primary" (click)="click$.next(null)">Get</button>
+    </div>
+    <div class="sections">
+        <div class="section section-1">
+            <ng-container *ngIf="(students$ | async) as students">
+                <h2>Students list</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let student of students">{{ student.firstName }} {{
+                        student.lastName }}</mat-list-item>
+                </mat-list>
+            </ng-container>
+        </div>
+    </div>
+</div>

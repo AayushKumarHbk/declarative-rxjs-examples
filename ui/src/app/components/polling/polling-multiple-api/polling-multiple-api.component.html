@@ -1,0 +1,32 @@
+<div class="example-container">
+    <h1>Poll Multiple APIs</h1>
+    <mat-divider></mat-divider>
+    <img class="example-image" src="assets/images/network/poll-multiple-apis.PNG" alt="Example Image">
+    <div class="sections" *ngIf="(selectedDossier$ | async) as selectedDossier">
+        <div class="section">
+            <h2>Selected Dossier: {{ selectedDossier.id }}</h2>
+
+            <div class="section section-1">
+                <h2>Export Data</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let exportData of selectedDossier.exportData">{{
+                        exportData.tcn }} {{
+                        exportData.tot }} {{ exportData.dai }}</mat-list-item>
+                </mat-list>
+            </div>
+
+            <div class="section section-1">
+                <h2>Printing Requests</h2>
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let printingRequest of selectedDossier.printingRequests">{{
+                        printingRequest.destination }} {{
+                        printingRequest.noOfCopies }} {{ printingRequest.color }}</mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>

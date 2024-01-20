@@ -1,0 +1,11 @@
+.section-1 {
+    width: 50%;
+    float: left;
+}
+.c-pointer {
+    ::ng-deep {
+        .mdc-list-item__primary-text {
+            cursor: pointer;
+        }
+    }
+}
